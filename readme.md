@@ -90,25 +90,21 @@ La Actividad 1 permanece funcionando en el puerto 8081, por lo que ambas aplicac
 
 El proyecto se desplegó en la máquina virtual de Azure y se realizaron pruebas desde el navegador y Postman utilizando la IP pública del servidor y el puerto 8083.
 
-### Página principal
-
-![Página principal del proyecto en el VPS](imagenes/imagen1.png)
-
 ### Lista de empleados
 
-![Lista de empleados en el VPS](imagenes/imagen2.png)
+![Lista de empleados en el VPS](imagenes/imagen1.png)
 
 ### Detalle de empleado
 
-![Detalle de empleado en el VPS](imagenes/imagen3.png)
+![Detalle de empleado en el VPS](imagenes/imagen2.png)
 
 ### Formulario de empleados
 
-![Formulario de empleados en el VPS](imagenes/imagen4.png)
+![Formulario de empleados en el VPS](imagenes/imagen3.png)
 
 ### Resultado del formulario
 
-![Resultado del registro de empleado en el VPS](imagenes/imagen5.png)
+![Resultado del registro de empleado en el VPS](imagenes/imagen4.png)
 
 ### Parámetros con @RequestParam
 
@@ -118,7 +114,7 @@ Se comprobó la recepción de información mediante `@RequestParam`.
 
 `http://20.119.81.138:8083/api/parametros/detalle?informacion=Hola`
 
-![Prueba de RequestParam en el VPS](imagenes/imagen6.png)
+![Prueba de RequestParam en el VPS](imagenes/imagen5.png)
 
 ### Parámetros con @PathVariable
 
@@ -128,7 +124,29 @@ Se comprobó la recepción de un identificador directamente desde la ruta median
 
 `http://20.119.81.138:8083/api/path/detalle/5`
 
-![Prueba de PathVariable en el VPS](imagenes/imagen7.png)
+![Prueba de PathVariable en el VPS](imagenes/imagen6.png)
+
+### API REST con POST
+
+Se comprobó el funcionamiento de la API REST mediante Postman, utilizando el método POST y enviando un objeto JSON.
+
+**Endpoint:**
+
+`http://20.119.81.138:8083/api/empleados`
+
+**Ejemplo de JSON enviado:**
+
+```json
+{
+  "id": 0,
+  "nombre": "Sofia",
+  "apellido": "Ruiz",
+  "puesto": "Gerente",
+  "edad": 30
+}
+```
+
+![Prueba POST en Postman en el VPS](imagenes/imagen7.png)
 
 ## Alumno
 
