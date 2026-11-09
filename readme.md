@@ -52,36 +52,10 @@ El proyecto fue probado localmente y desplegado en una máquina virtual de Azure
 - `/api/parametros/detalle?informacion=Hola` : recibe información mediante `@RequestParam`.
 - `/api/path/detalle/5` : recibe un identificador mediante `@PathVariable`.
 
-## Cuestionario
 
-**a) ¿Qué es MVC y qué componentes lo forman en tu proyecto?**
-
-MVC significa Modelo-Vista-Controlador. Es un patrón de diseño que organiza una aplicación en tres partes: el Modelo, que representa los datos y la información; la Vista, que muestra la información al usuario; y el Controlador, que recibe las peticiones y conecta el modelo con la vista.
-
-En este proyecto, los DTO representan la información de los empleados, las vistas HTML con Thymeleaf muestran los datos y los controladores administran las solicitudes y las respuestas.
-
-**b) ¿Qué es un DTO y por qué no se debe exponer directamente una entidad?**
-
-DTO significa Data Transfer Object y es un objeto utilizado para transportar información entre diferentes partes de una aplicación. En este proyecto se utiliza `EmpleadoDTO` para manejar los datos de los empleados, como su ID, nombre, apellido, puesto y edad.
-
-Es conveniente utilizar DTO porque permite controlar qué información se recibe o se envía, evita exponer directamente la estructura interna de una entidad y facilita la validación y el mantenimiento del código.
-
-**c) ¿Cuál es la diferencia entre @ModelAttribute y @RequestBody?**
-
-`@ModelAttribute` se utiliza para recibir información de formularios HTML y relacionarla con un objeto Java. En este proyecto se utiliza para recibir los datos del formulario de empleados.
-
-`@RequestBody` se utiliza para recibir información enviada en el cuerpo de una petición HTTP, generalmente en formato JSON. En este proyecto se utiliza en el controlador REST para recibir un objeto `EmpleadoDTO` mediante una solicitud POST.
-
-**d) ¿Qué puerto se utilizó en el VPS y por qué?**
-
-Se utilizó el puerto **8083**, configurado manualmente en el archivo `application.properties` mediante la propiedad `server.port=8083`.
-
-Se eligió este puerto para evitar conflictos con la Actividad 1, que continúa funcionando en el puerto 8081. De esta manera, ambas aplicaciones pueden ejecutarse simultáneamente en la misma máquina virtual de Azure. También se configuró una regla de entrada en el grupo de seguridad de red de Azure para permitir el acceso al puerto 8083.
 
 ## Enlaces
 
-**Repositorio de GitHub:**  
-https://github.com/JesusCortes-designer/JCCact2_t4
 
 **Proyecto en el VPS:**  
 http://20.119.81.138:8083/
