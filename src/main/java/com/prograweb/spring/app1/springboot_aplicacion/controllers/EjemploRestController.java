@@ -7,22 +7,26 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.prograweb.spring.app1.springboot_aplicacion.models.Empleados;
+import com.prograweb.spring.app1.springboot_aplicacion.models.DTO.ClaseDTO;
+
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+
 @RestController
 @RequestMapping("/api")
 
+
 public class EjemploRestController {
 
-    @GetMapping("/nombre")
-    public String nombre() {
-        return "Proyecto JCCact1_t4 - Jesús Cortés";
-    }
+    @RequestMapping(path ="/detalles_info2")
+    
+      public ClaseDTO detalles_info() {
+        ClaseDTO usuario1= new ClaseDTO();
+        usuario1.setTitulo("Administrador");
+        usuario1.setUsuario("PrograWeb");
+        return usuario1;
 
-    @GetMapping("/detalles_info2")
-    public Map<String, Object> detallesInfo2() {
-        Map<String, Object> respuesta = new LinkedHashMap<>();
-        respuesta.put("Titulo", "Servidor en línea");
-        respuesta.put("Servidor", "PrograWeb");
-        respuesta.put("Autor", "JCC");
-        return respuesta;
     }
 }
